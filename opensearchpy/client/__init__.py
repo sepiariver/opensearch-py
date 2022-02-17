@@ -355,7 +355,7 @@ class OpenSearch(object):
             doc_type = "_doc"
 
         return self.transport.perform_request(
-            "POST" if id in SKIP_IN_PATH else "PUT",
+            "PUT" if id in SKIP_IN_PATH else "POST",
             _make_path(index, doc_type, id),
             params=params,
             headers=headers,
